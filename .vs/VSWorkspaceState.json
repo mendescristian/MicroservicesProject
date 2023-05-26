@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src",
+    "\\src\\Services"
   ],
+  "SelectedNode": "\\src\\MicroservicesProject.sln",
   "PreviewInSolutionExplorer": false
 }

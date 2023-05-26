@@ -1,0 +1,18 @@
+name: dockercompose10900220175240334603
+services:
+  catalog.api:
+    build:
+      context: C:\Users\crist\Source\Repos\mendescristian\MicroservicesProject\src
+      dockerfile: Services/Catalog/Catalog.API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: catalogapi
+    networks:
+      default: null
+    ports:
+    - mode: ingress
+      target: 80
+      protocol: tcp
+networks:
+  default:
+    name: dockercompose10900220175240334603_default
