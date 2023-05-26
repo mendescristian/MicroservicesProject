@@ -475,3 +475,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/src/.vs/ProjectEvaluation/microservicesproject.metadata.v6.1
+/src/.vs/ProjectEvaluation/microservicesproject.projects.v6.1
+/src/.vs/MicroservicesProject/v17/.suo
+/src/.vs/MicroservicesProject/DesignTimeBuild/.dtbcache.v2
+/src/.vs/ProjectEvaluation/microservicesproject.projects.v6.1
