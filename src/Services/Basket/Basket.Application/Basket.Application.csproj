@@ -16,10 +16,4 @@
     <ProjectReference Include="..\Basket.Infrastructure\Basket.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Common\Dtos\" />
-    <Folder Include="Common\Validations\" />
-    <Folder Include="Mapping\" />
-  </ItemGroup>
-
 </Project>
