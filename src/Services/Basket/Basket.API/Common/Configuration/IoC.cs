@@ -30,7 +30,7 @@ namespace Basket.API.Common.Configuration
         private static void InjectClients(this IServiceCollection collection, IConfiguration configuration)
         {
             collection.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>(
-                opt => opt.Address = new Uri(configuration.GetSection("GrpcSettings:DiscountUrl").Value));
+                opt => opt.Address = new Uri(configuration["GrpcSettings:DiscountUrl"]));
         }
     }
 }
