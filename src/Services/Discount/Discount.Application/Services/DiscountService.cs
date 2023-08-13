@@ -3,6 +3,7 @@ using Discount.Application.Common.Dtos;
 using Discount.Application.Services.Interfaces;
 using Discount.Infrastructure.Repositories.Interfaces;
 using MicroservicesProject.Core.Entities.PostgreSQL;
+using System.Threading.Tasks;
 
 namespace Discount.Application.Services
 {

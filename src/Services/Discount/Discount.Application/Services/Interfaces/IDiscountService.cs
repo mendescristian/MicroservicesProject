@@ -1,4 +1,5 @@
 ﻿using Discount.Application.Common.Dtos;
+using System.Threading.Tasks;
 
 namespace Discount.Application.Services.Interfaces
 {
