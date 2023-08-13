@@ -27,6 +27,9 @@
         }
 
         public ShoppingCart(string userName)
-            => UserName = userName;
+        {
+            UserName = userName;
+            Items = new List<ShoppingCartItem>();
+        }
     }
 }

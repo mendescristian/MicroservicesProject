@@ -12,7 +12,7 @@ builder.Services.AddStackExchangeRedisCache(options =>
 {
     options.Configuration = builder.Configuration.GetValue<string>("CacheSettings:ConnectionString");
 });
-builder.Services.AddDependencyInject();
+builder.Services.AddDependencyInject(builder.Configuration);
 
 var app = builder.Build();
 

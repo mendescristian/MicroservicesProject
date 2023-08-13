@@ -1,4 +1,5 @@
-﻿using Basket.Application.Services.Interfaces;
+﻿using Basket.API.GRPCServices;
+using Basket.Application.Services.Interfaces;
 using MicroservicesProject.Core.Entities.Redis;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,10 +10,12 @@ namespace Basket.API.Controllers
     public class BasketController : ControllerBase
     {
         private readonly IBasketService _basketService;
+        private readonly DiscountGRPCService _discountGrpcService;
 
-        public BasketController(IBasketService basketService)
+        public BasketController(IBasketService basketService, DiscountGRPCService discountGrpcService)
         {
             _basketService = basketService;
+            _discountGrpcService = discountGrpcService;
         }
 
         [HttpGet("search")]
@@ -31,6 +34,13 @@ namespace Basket.API.Controllers
         {
             if (basket is null)
                 return BadRequest("Cart data not informed.");
+
+            foreach (var item in basket.Items) 
+            {
+                var coupon = await _discountGrpcService.GetDiscountAsync(item.ProductName);
+
+                item.Price -= coupon.Amount;
+            }
 
             var basketUpdated = await _basketService.UpdateBasketAsync(basket);
 
