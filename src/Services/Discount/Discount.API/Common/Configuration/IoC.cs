@@ -1,9 +1,9 @@
-﻿using Basket.Application.Services;
-using Basket.Application.Services.Interfaces;
-using Basket.Infrastructure.Repositories;
-using Basket.Infrastructure.Repositories.Interface;
+﻿using Discount.Application.Services;
+using Discount.Application.Services.Interfaces;
+using Discount.Infrastructure.Repositories;
+using Discount.Infrastructure.Repositories.Interfaces;
 
-namespace Basket.API.Common.Configuration
+namespace Discount.API.Common.Configuration
 {
     public static class IoC
     {
@@ -15,12 +15,12 @@ namespace Basket.API.Common.Configuration
 
         private static void InjectRepositories(this IServiceCollection collection)
         {
-            collection.AddScoped<IBasketRepository, BasketRepository>();
+            collection.AddScoped<IDiscountRepository, DiscountRepository>();
         }
 
         private static void InjectImplementations(this IServiceCollection collection)
         {
-            collection.AddScoped<IBasketService, BasketService>();
+            collection.AddScoped<IDiscountService, DiscountService>();
         }
     }
 }

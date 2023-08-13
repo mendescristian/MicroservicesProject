@@ -15,17 +15,23 @@ namespace Basket.API.Controllers
             _basketService = basketService;
         }
 
-        [HttpGet("search/{userName}")]
-        public async Task<IActionResult> GetBasketAsync([FromRoute] string userName)
+        [HttpGet("search")]
+        public async Task<IActionResult> GetBasketAsync([FromQuery] string userName)
         {
+            if (string.IsNullOrWhiteSpace(userName))
+                return BadRequest("User name not informed.");
+
             var basket = await _basketService.GetBasketAsync(userName);
 
             return Ok(basket);
         }
 
-        [HttpPost("update")]
+        [HttpPut("update")]
         public async Task<IActionResult> UpdateBasketAsync([FromBody] ShoppingCart basket)
         {
+            if (basket is null)
+                return BadRequest("Cart data not informed.");
+
             var basketUpdated = await _basketService.UpdateBasketAsync(basket);
 
             return Ok(basketUpdated);
@@ -34,6 +40,9 @@ namespace Basket.API.Controllers
         [HttpDelete("delete/{userName}")]
         public async Task<IActionResult> DeleteBasketAsync([FromRoute] string userName)
         {
+            if (string.IsNullOrWhiteSpace(userName))
+                return BadRequest("User name not informed.");
+
             await _basketService.DeleteBasketAsync(userName);
 
             return NoContent();

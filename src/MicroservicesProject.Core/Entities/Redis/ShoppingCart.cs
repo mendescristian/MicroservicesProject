@@ -10,6 +10,9 @@
             {
                 decimal totalPrice = 0;
 
+                if (Items is null || !Items.Any())
+                    return totalPrice;
+
                 foreach (ShoppingCartItem item in Items)
                 {
                     totalPrice += item.Price * item.Quantity;
