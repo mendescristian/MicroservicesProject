@@ -7,8 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\MicroservicesProject.Core\MicroservicesProject.Core.csproj" />
-    <ProjectReference Include="..\Catalog.Infrastructure\Catalog.Infrastructure.csproj" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
 </Project>

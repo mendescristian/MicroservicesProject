@@ -7,14 +7,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="obj\**" />
-    <EmbeddedResource Remove="obj\**" />
-    <None Remove="obj\**" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="7.0.0" />
+    <PackageReference Include="Npgsql" Version="7.0.4" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="7.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\MicroservicesProject.Core\MicroservicesProject.Core.csproj" />
-    <ProjectReference Include="..\Discount.Infrastructure\Discount.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
